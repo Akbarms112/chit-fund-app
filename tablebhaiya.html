@@ -1,0 +1,142 @@
+<html>
+<head>
+  <title>FUNDING SYSTEM</title>
+  
+  <h1 style="color:black(255, 0, 0);"> <center>FUND DETAILS</center></h1>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>    
+  <table id="dynamic-table">
+    <thead>
+      <tr>
+        
+        <th>S NO</th>
+        <th>FUND NUMBER</th>
+        </th>
+        <th>AMOUNT</th>
+        <th>STATUS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td contenteditable="true" style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+      <tr>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+        <td contenteditable="true"style="text-align: center;"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+      
+<style>  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #111010;
+    padding: 8px;
+  }
+  
+  th {
+    background-color:rgb(21, 206, 212);
+  }
+  
+  td[contenteditable="true"] {
+    background-color: #e7e1c7;
+    cursor: text;
+  }
+  </style>
+  <script>
+    // Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function() {
+  const table = document.getElementById("dynamic-table");
+
+  // Add a new row when user presses "Enter" key in the last cell
+  table.addEventListener("keydown", function(event) {
+    const target = event.target;
+    if (event.key === "Enter" && target.tagName === "TD" && target.parentNode.nextElementSibling === null) {
+      const newRow = document.createElement("tr");
+      const columns = table.querySelectorAll("thead th").length;
+
+      for (let i = 0; i < columns; i++) {
+        const cell = document.createElement("td");
+        cell.setAttribute("contenteditable", "true");
+        newRow.appendChild(cell);
+      }
+
+      table.querySelector("tbody").appendChild(newRow);
+      newRow.firstElementChild.focus(); // Move focus to the first cell of the new row
+    }
+  });
+});
+  </script>
+  </html>
